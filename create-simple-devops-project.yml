@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: 172.31.55.96
   become: yes
 
   tasks:

@@ -5,19 +5,19 @@
   tasks:
 
     - name: stop current running container
-      command: docker stop simple-devops-container
+      command: docker stop devops-container
       ignore_errors: yes
 
     - name: remove stopped docker container
-      command: docker rm simple-devops-container
+      command: docker rm devops-container
       ignore_errors: yes
 
     - name: remove current docker image
-      command: docker rmi devopscloudage/simple-devops-image:latest
+      command: docker rmi devopscloudage/devops-image:latest
       ignore_errors: yes
 
     - name: pull docker image from dockerhub
-      command: docker pull devopscloudage/simple-devops-image:latest
+      command: docker pull devopscloudage/devops-image:latest
 
     - name: creating docker container using simple-devops-image
-      command: docker run -d --name simple-devops-container -p 8080:8080 devopscloudage/simple-devops-image:latest
+      command: docker run -d --name devops-container -p 8080:8080 devopscloudage/devops-image:latest
